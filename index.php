@@ -1,3 +1,12 @@
+<?php 
+	$code = null;
+	$message = null;
+	if($_GET['code']){
+		$code = $_GET['code'];
+		$message = $_GET['message'];
+	}
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -21,7 +30,17 @@
 
       		<div class="row">
       			<div class="col-md-12">
-  				
+				  <?php if($code != null && $code == '1'){ ?>
+					<div class="alert alert-success" role="alert">
+				  		<?php echo($message);?>	
+				  	</div>
+					<?php } elseif($code != null && $code == '2'){ ?> 
+						<div class="alert alert-danger" role="alert">
+				  		<?php echo($message);?>	
+				  	</div>
+					<?php } ?>
+				  
+				  
 					<div class="card-body font-weight-bold">
 						<form action="email_processing.php" method="POST">
 							<div class="form-group">
