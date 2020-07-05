@@ -23,20 +23,20 @@
       			<div class="col-md-12">
   				
 					<div class="card-body font-weight-bold">
-						<form>
+						<form action="email_processing.php" method="POST">
 							<div class="form-group">
 								<label for="to">To</label>
-								<input type="text" class="form-control" id="to" placeholder="name@domain.com.br">
+								<input type="text" name="to" class="form-control" id="to" placeholder="name@domain.com.br">
 							</div>
 
 							<div class="form-group">
 								<label for="subject">Subject</label>
-								<input type="text" class="form-control" id="subject">
+								<input type="text" name="subject" class="form-control" id="subject">
 							</div>
 
 							<div class="form-group">
 								<label for="msg">Message</label>
-								<textarea class="form-control" id="msg"></textarea>
+								<textarea class="form-control"  name="message" id="msg"></textarea>
 							</div>
 
 							<button type="submit" class="btn btn-primary btn-lg">Go!</button>
