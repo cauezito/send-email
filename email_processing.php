@@ -45,30 +45,26 @@
         //Server settings
         $mail->SMTPDebug = 2;                                
         $mail->isSMTP();                                     
-        $mail->Host = 'smtp1.example.com;smtp2.example.com'; 
+        $mail->Host = 'smtp.gmail.com'; 
         $mail->SMTPAuth = true;                              
-        $mail->Username = 'user@example.com';                
-        $mail->Password = 'secret';                          
+        $mail->Username = 'test0101web@gmail.com';                
+        $mail->Password = '***';                          
         $mail->SMTPSecure = 'tls';                          
         $mail->Port = 587;                                   
 
         //Recipients
-        $mail->setFrom('from@example.com', 'Mailer');
-        $mail->addAddress('joe@example.net', 'Joe User');    
-        $mail->addAddress('ellen@example.com');              
-        $mail->addReplyTo('info@example.com', 'Information');
-        $mail->addCC('cc@example.com');
-        $mail->addBCC('bcc@example.com');
+        $mail->setFrom('test0101web@gmail.com', 'Cauê');
+        $mail->addAddress($message->__get('to'), ' ');               
+        $mail->addReplyTo('nokylevs@gmail.com', 'Cauê');
 
-        //Attachments
+     /*   //Attachments
         $mail->addAttachment('/var/tmp/file.tar.gz');        
         $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    
-
+    */
         //Content
         $mail->isHTML(true);                                
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Subject = $message->__get('subject');
+        $mail->Body    = $message->__get('message');
 
         $mail->send();
         echo 'Message has been sent';
