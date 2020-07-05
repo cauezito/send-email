@@ -1,7 +1,7 @@
 <?php 
 	$code = null;
 	$message = null;
-	if($_GET['code']){
+	if(isset($_GET['code'])){
 		$code = $_GET['code'];
 		$message = $_GET['message'];
 	}
