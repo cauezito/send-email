@@ -16,6 +16,10 @@
 
 	</head>
 
+	<style>
+
+	</style>
+
 	<body>
 
 		<div class="container bg-light">  
@@ -43,9 +47,10 @@
 				  
 					<div class="card-body font-weight-bold">
 						<form action="email_processing.php" method="POST">
-							<div class="form-group">
-								<label for="to">To</label>
-								<input type="text" name="to" class="form-control" id="to" placeholder="name@domain.com.br">
+							<div class="form-group" id="sender">
+								<label for="to" class="mr-1">To (max: 5)</label>
+								<img src="img/plus.png" alt="more" class="more" style="cursor:pointer">
+								<input type="text" name="to1" class="form-control" id="to" placeholder="name@domain.com">
 							</div>
 
 							<div class="form-group">
@@ -55,7 +60,7 @@
 
 							<div class="form-group">
 								<label for="msg">Message</label>
-								<textarea class="form-control"  name="message" id="msg"></textarea>
+								<textarea  style="resize:none" class="form-control"  name="message" id="msg"></textarea>
 							</div>
 
 							<button type="submit" class="btn btn-primary btn-lg">Go!</button>
@@ -64,6 +69,6 @@
 				</div>
       		</div>
       	</div>
-
+	<script src="js/script.js"></script>
 	</body>
 </html>
